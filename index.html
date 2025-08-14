@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Coming Soon</title>
+  <meta name="description" content="We're launching something great—counting down to the big day!" />
+
+  <!-- Optional webfont; safe to remove if you prefer system fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml" />
+</head>
+<body>
+  <noscript>
+    <div class="noscript">JavaScript is required to show the live countdown.</div>
+  </noscript>
+
+  <main class="wrap">
+    <header class="brand">
+      <!-- Replace with your own logo/image or remove the <img> entirely -->
+      <img src="images/logo.svg" alt="" class="logo" />
+      <h1>We&rsquo;re Launching Soon</h1>
+      <p class="subtitle">Get ready for something awesome.</p>
+    </header>
+
+    <section class="timer" aria-label="Countdown timer">
+      <div class="countdown" aria-live="polite" aria-atomic="true">
+        <div class="timebox">
+          <span id="days" class="value">0</span>
+          <span class="label">Days</span>
+        </div>
+        <div class="timebox">
+          <span id="hours" class="value">0</span>
+          <span class="label">Hours</span>
+        </div>
+        <div class="timebox">
+          <span id="minutes" class="value">0</span>
+          <span class="label">Minutes</span>
+        </div>
+        <div class="timebox">
+          <span id="seconds" class="value">0</span>
+          <span class="label">Seconds</span>
+        </div>
+      </div>
+      <p id="statusText" class="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <form class="cta" action="#" method="post" onsubmit="return false;">
+      <label for="email" class="visually-hidden">Email address</label>
+      <input id="email" type="email" placeholder="Enter your email for updates" autocomplete="email" />
+      <button type="button" id="notifyBtn">Notify Me</button>
+      <p id="ctaMsg" class="cta-msg" aria-live="polite"></p>
+    </form>
+
+    <footer class="foot">
+      <small>&copy; <span id="year"></span> Your Company. All rights reserved.</small>
+    </footer>
+  </main>
+
+  <!-- Decorative background image (optional) -->
+  <div class="bg">
+    <!-- If you add images/background.jpg, it will be shown. Otherwise gradient stays. -->
+  </div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
