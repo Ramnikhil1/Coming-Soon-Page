@@ -1,0 +1,163 @@
+/* Base + Theme */
+:root{
+  --bg: #0b0f1a;
+  --fg: #e8eefc;
+  --muted: #a9b4d0;
+  --accent: #8ab4ff;
+  --glass: rgba(255,255,255,0.08);
+  --ring: rgba(138,180,255,0.5);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--fg);
+  background: radial-gradient(1200px 800px at 80% 10%, #17223a 0%, #0b0f1a 60%, #060910 100%);
+  overflow: hidden;
+}
+
+/* Layout */
+.wrap{
+  position: relative;
+  min-height: 100dvh;
+  padding: clamp(16px, 3vw, 32px);
+  display: grid;
+  place-items: center;
+}
+
+.brand{
+  text-align: center;
+  margin-bottom: 14px;
+}
+.logo{
+  width: 64px;
+  height: 64px;
+  margin-bottom: 12px;
+  opacity: 0.95;
+}
+h1{
+  margin: 0 0 4px;
+  font-size: clamp(28px, 5vw, 48px);
+  letter-spacing: 0.3px;
+}
+.subtitle{
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(14px, 2.2vw, 18px);
+}
+
+/* Countdown */
+.timer{
+  margin: 18px 0 8px;
+  width: min(920px, 96vw);
+}
+.countdown{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(10px, 2.4vw, 22px);
+}
+.timebox{
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: clamp(16px, 2.6vw, 24px);
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(255,255,255,0.04);
+}
+.value{
+  font-size: clamp(28px, 6.5vw, 54px);
+  font-weight: 800;
+  line-height: 1;
+  display: block;
+  letter-spacing: 1px;
+}
+.label{
+  display: block;
+  margin-top: 6px;
+  font-size: clamp(12px, 1.8vw, 14px);
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+}
+
+.status{
+  text-align: center;
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* Email CTA (optional, no backend wired) */
+.cta{
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  width: min(560px, 92vw);
+}
+.cta input{
+  flex: 1;
+  padding: 14px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.06);
+  color: var(--fg);
+  outline: none;
+}
+.cta input::placeholder{ color: #c7cfdfcc; }
+.cta input:focus{
+  border-color: var(--ring);
+  box-shadow: 0 0 0 6px rgba(138,180,255,0.12);
+}
+.cta button{
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: linear-gradient(180deg, #90b8ff, #5f8fe8);
+  color: #0c1530;
+  font-weight: 700;
+  cursor: pointer;
+}
+.cta button:active{
+  transform: translateY(1px);
+}
+.cta-msg{
+  width: 100%;
+  margin: 8px 2px 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Footer */
+.foot{
+  margin-top: 18px;
+  color: var(--muted);
+}
+
+/* Background layer (optional image) */
+.bg{
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(600px 600px at 15% 85%, rgba(96, 165, 250, 0.12), transparent 60%),
+    radial-gradient(500px 500px at 85% 15%, rgba(244, 114, 182, 0.10), transparent 60%),
+    url("images/background.jpg") center/cover no-repeat;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* A11y helpers */
+.visually-hidden{
+  position: absolute !important;
+  clip: rect(1px,1px,1px,1px);
+  padding: 0 !important; border: 0 !important; height: 1px !important; width: 1px !important;
+  overflow: hidden;
+}
+
+/* Small screens */
+@media (max-width: 640px){
+  .countdown{ grid-template-columns: repeat(2, 1fr); }
+}
